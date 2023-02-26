@@ -1,0 +1,21 @@
+@mixin block($heading-color, $btn-Bg) {
+    font-family: 'Lato', sans-serif;
+    border: $box-border;
+  padding: $box-padding;
+  border-radius: 5px;
+  width: 400px;
+  h2 {
+    font-size: 30px;
+    margin: 0;
+    color: $heading-color;
+  }
+  a {
+    background: $btn-Bg;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+}

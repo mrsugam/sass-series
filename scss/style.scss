@@ -1,0 +1,281 @@
+@import "partials/base";
+@import "partials/variables";
+@import "partials/typography";
+@import "partials/utility";
+@import "partials/mixin";
+
+.box1 {
+    @include block($color-primary, $color-primary);
+  background: map-get($colors, yellow-color);
+  
+}
+.box1 p {
+    font-size: 14px;
+    color: rgba($color-black, 0.5);
+    line-height: 25px;
+}
+
+.box1 a:hover{
+    background: darken($color-primary, 15%);
+}
+
+.box2 {
+    @include block(#000, rgb(141, 77, 40));
+  background: map-get($colors, green-color );
+}
+
+.box2 a {
+    background: rgb(141, 77, 40);
+}
+
+.box2 a:hover{
+    background: darken(rgb(141, 77, 40), 15%);
+}
+
+ul{
+    list-style-type: square;
+    li {
+        padding: 10px;
+        a {
+            background: red;
+            display: inline-block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            &:hover{
+                background: darken(red, 15%);
+            }
+        }
+        &:first-child{
+            border: 5px solid red;
+        }
+    }
+}
+
+%box {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.green-box {
+    @extend %box;
+    background: greenyellow;
+    font-family: 'Lato', sans-serif;
+}
+
+.yellow-box {
+    @extend %box;
+    background-color: yellow;
+}
+
+.btn {
+    padding: 7px 12px;
+    color: #454545;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
+
+.btn-success {
+    @extend .btn;
+    background: #42ba3d;
+    color: #fff;
+}
+
+.btn-danger {
+    @extend .btn;
+    background: red;
+    color: #fff;
+}
+
+// [[ Sass Built-In Function ]]
+// 1) darken($colorName, 15%)
+// 2) lighten($colorName, 15%)
+// 3) mix(#ccff00, #ffcc00)
+// 4) map($map, $key)
+
+@function sum($val1, $val2) {
+    @return $val1 + $val2;
+}
+
+
+.function {
+    background: red;
+    border: 1px solid red;
+    font-family: 'Lato', sans-serif;
+    font-size: sum(10, 20)*1px;
+    color: #fff;
+}
+.function:hover {
+    background: mix(#ffcc00, red)
+}
+
+$baseUrl:'../img/';
+
+@function normalImg($url) {
+    @return url($baseUrl + $url)
+}
+@function mobileImg($url) {
+    @return url($baseUrl+'mobile/'+ $url)
+}
+
+.desktopImages {
+    background: normalImg('sea-view.jpg');
+}
+.mobileImages {
+    background: mobileImg('sea-view.jpg');
+}
+
+// Equality Operators 
+// == , !=
+
+// Comparison Operators
+// <, > , <=, >=
+
+// Numeric Operators
+// +, -, * , /, %
+
+$num1: 10;
+$num2: 5;
+
+.myClass {
+    padding: $num1 + $num2 + px;
+}
+
+.myClass p {
+    font-size: $num1 + px;
+}
+
+.myClass button {
+    font-size: $num1 * 2 + px;
+}
+
+// Sass Interpolation
+// #{}
+
+
+// .gap-left-50 {
+//     margin-left: 50px;
+// }
+// $side: left;
+// $value: 100;
+// .gap-#{$side}-#{$value} {
+//     margin-#{$side}: 50px;
+// }
+
+@mixin gap($side, $value, $property) {
+    #{$property}-#{$side}: $value;
+}
+
+// .newClass {
+//     @include gap(right, 50)
+// }
+
+.newClass1 {
+    @include gap(left, 70, padding)
+}
+
+.newClass2 {
+    @include gap(right, 50, margin)
+}
+
+// Sass If and Else Condition
+// @if
+// @else
+
+// Case 1
+
+// $value1: low;
+// .myClassNew {
+//     @if $value1 == high {margin: 100px;}
+//     @else if $value1 == low {margin:50px;}
+//     @else {margin: 20px;}
+// }
+
+// Case 2
+
+@mixin myStyle($value) {
+    font-size: $value + px;
+    @if $value > 100 {color: green;}
+    @else if $value < 90 {color: yellow;}
+    @else {color: blue;}
+}
+
+.myClassNew {
+    @include myStyle(80);
+}
+
+// Case 3
+
+@function getFontSize($type) {
+    @if $type == header {
+        @return 50px;
+    }
+    @else if $type == footer {
+        @return 30px;
+    }
+    @else {
+        @return 20px;
+    }
+}
+
+header {
+    font-size: getFontSize(header);
+}
+
+footer {
+    font-size: getFontSize(footer);
+}
+
+body {
+    font-size: getFontSize(body);
+}
+
+// Case 4
+@mixin box($boxStyle) {
+    @if $boxStyle == dark {
+        background: #000;
+    color: #fff;
+    } @else if $boxStyle == light {
+        background: #dddddd;
+    color: #000;
+    }
+}
+.box-new {
+    @include box(light);
+    width: 200px;
+    padding: 25px;
+    border-radius: 5px;
+    margin: 100px;
+}
+
+.box-new2 {
+    @include box(dark);
+    width: 200px;
+    padding: 25px;
+    border-radius: 5px;
+    margin: 100px;
+}
+
+// Sass @For loop
+
+@for $i from 1 to 5 {
+    .box-#{$i * 100} {
+        width: #{$i * 100};
+        background: darken(pink, $i*10%);
+    }
+}
+
+// @for $i from 1 through 4 {
+//     .gap-left-#{i} {
+//         margin-left:$i * 100px;
+//     }
+// }
+
+@for $j from 1 through 4 {
+    .col-md-#{j}{
+        width: $j * 25%;
+    }
+}

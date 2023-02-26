@@ -1,0 +1,14 @@
+{
+  "name": "sass-series",
+  "version": "1.0.0",
+  "description": "learn sass",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass scss/style.scss css/style.css -w"
+  },
+  "author": "sugam",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

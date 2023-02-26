@@ -1,0 +1,199 @@
+.float {
+  float: left; }
+
+.floatR {
+  float: right; }
+
+.clear {
+  clear: both; }
+
+.margin-0 {
+  margin: 0px; }
+
+.padding-0 {
+  padding: 0px; }
+
+.box1 {
+  font-family: 'Lato', sans-serif;
+  border: 1px solid #c7c7c7;
+  padding: 15px;
+  border-radius: 5px;
+  width: 400px;
+  background: yellow; }
+  .box1 h2 {
+    font-size: 30px;
+    margin: 0;
+    color: #733dba; }
+  .box1 a {
+    background: #733dba;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    display: inline-block; }
+
+.box1 p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 25px; }
+
+.box1 a:hover {
+  background: #4f2a80; }
+
+.box2 {
+  font-family: 'Lato', sans-serif;
+  border: 1px solid #c7c7c7;
+  padding: 15px;
+  border-radius: 5px;
+  width: 400px;
+  background: green; }
+  .box2 h2 {
+    font-size: 30px;
+    margin: 0;
+    color: #000; }
+  .box2 a {
+    background: #8d4d28;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    display: inline-block; }
+
+.box2 a {
+  background: #8d4d28; }
+
+.box2 a:hover {
+  background: #512c17; }
+
+ul {
+  list-style-type: square; }
+  ul li {
+    padding: 10px; }
+    ul li a {
+      background: red;
+      display: inline-block;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none; }
+      ul li a:hover {
+        background: #b30000; }
+    ul li:first-child {
+      border: 5px solid red; }
+
+.green-box, .yellow-box {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  width: 400px; }
+
+.green-box {
+  background: greenyellow;
+  font-family: 'Lato', sans-serif; }
+
+.yellow-box {
+  background-color: yellow; }
+
+.btn, .btn-success, .btn-danger {
+  padding: 7px 12px;
+  color: #454545;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  border-radius: 5px; }
+
+.btn-success {
+  background: #42ba3d;
+  color: #fff; }
+
+.btn-danger {
+  background: red;
+  color: #fff; }
+
+.function {
+  background: red;
+  border: 1px solid red;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  color: #fff; }
+
+.function:hover {
+  background: #ff6600; }
+
+.desktopImages {
+  background: url("../img/sea-view.jpg"); }
+
+.mobileImages {
+  background: url("../img/mobile/sea-view.jpg"); }
+
+.myClass {
+  padding: 15px; }
+
+.myClass p {
+  font-size: 10px; }
+
+.myClass button {
+  font-size: 20px; }
+
+.newClass1 {
+  padding-left: 70; }
+
+.newClass2 {
+  margin-right: 50; }
+
+.myClassNew {
+  font-size: 80px;
+  color: yellow; }
+
+header {
+  font-size: 50px; }
+
+footer {
+  font-size: 30px; }
+
+body {
+  font-size: 20px; }
+
+.box-new {
+  background: #dddddd;
+  color: #000;
+  width: 200px;
+  padding: 25px;
+  border-radius: 5px;
+  margin: 100px; }
+
+.box-new2 {
+  background: #000;
+  color: #fff;
+  width: 200px;
+  padding: 25px;
+  border-radius: 5px;
+  margin: 100px; }
+
+.box-100 {
+  width: 100;
+  background: #ff8da1; }
+
+.box-200 {
+  width: 200;
+  background: #ff5a77; }
+
+.box-300 {
+  width: 300;
+  background: #ff274d; }
+
+.box-400 {
+  width: 400;
+  background: #f3002a; }
+
+.col-md-j {
+  width: 25%; }
+
+.col-md-j {
+  width: 50%; }
+
+.col-md-j {
+  width: 75%; }
+
+.col-md-j {
+  width: 100%; }
